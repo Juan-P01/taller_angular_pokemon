@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/styles.css"],
-  "sourcesContent": [":root {\n  /* Paleta: fondo oscuro + rojo Pokeball como color de marca + neutros */\n  --color-bg: #12121f;\n  --color-surface: #1e1e33;\n  --color-surface-2: #2a2a45;\n  --color-brand: #ef4444;\n  --color-brand-hover: #dc2626;\n  --color-text: #f5f5f7;\n  --color-muted: #9a9ab5;\n  --radius: 16px;\n}\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  background:\n    radial-gradient(1200px 600px at 50% -10%, rgba(239, 68, 68, 0.18), transparent 60%),\n    var(--color-bg);\n  color: var(--color-text);\n  font-family: \"Inter\", system-ui, sans-serif;\n  line-height: 1.5;\n  min-height: 100%;\n}\n\n.bg-app {\n  background-color: var(--color-bg);\n}\n"],
-  "mappings": ";AAAA;AAEE,cAAY;AACZ,mBAAiB;AACjB,qBAAmB;AACnB,iBAAe;AACf,uBAAqB;AACrB,gBAAc;AACd,iBAAe;AACf,YAAU;AACZ;AAEA;AACE,cAAY;AACZ,UAAQ;AACR,WAAS;AACX;AAEA;AACA;AACE,UAAQ;AACV;AAEA;AACE;AAAA,IACE;AAAA,MAAgB,OAAO,MAAM,GAAG,IAAI,IAAI;AAAA,MAAE,KAAK,GAAG,EAAE,EAAE,EAAE,EAAE,EAAE,KAAK;AAAA,MAAE,YAAY,IAAI;AAAA,IACnF,IAAI;AACN,SAAO,IAAI;AACX;AAAA,IAAa,OAAO;AAAA,IAAE,SAAS;AAAA,IAAE;AACjC,eAAa;AACb,cAAY;AACd;AAEA,CAAC;AACC,oBAAkB,IAAI;AACxB;",
-  "names": []
-}
