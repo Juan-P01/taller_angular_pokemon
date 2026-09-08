@@ -22,6 +22,11 @@ export class AppComponent implements OnInit {
     this.buscar()
   }
 
+  submitSearch(event?: Event): void {
+    event?.preventDefault()
+    this.buscar()
+  }
+
   buscar(): void {
     const term = this.query.trim()
     if (!term) {
