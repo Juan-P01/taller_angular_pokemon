@@ -1,58 +1,13 @@
-import { ChangeDetectorRef, Component, OnInit } from "@angular/core"
-import { CommonModule } from "@angular/common"
-import { FormsModule } from "@angular/forms"
-import { PokemonService, type Pokemon } from "./pokemon.service"
+import { Component } from '@angular/core';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  selector: "app-root",
+  selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: "./app.component.html",
-  styleUrl: "./app.component.css",
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
-  query = "ditto"
-  pokemon: Pokemon | null = null
-  loading = false
-  error = ""
-
-  constructor(
-    private pokemonService: PokemonService,
-    private changeDetectorRef: ChangeDetectorRef,
-  ) {}
-
-  ngOnInit(): void {
-    this.buscar()
-  }
-
-  submitSearch(event?: Event): void {
-    event?.preventDefault()
-    this.buscar()
-  }
-
-  buscar(): void {
-    const term = this.query.trim()
-    if (!term) {
-      this.error = "Escribe el nombre o número de un Pokémon."
-      this.pokemon = null
-      return
-    }
-
-    this.loading = true
-    this.error = ""
-    this.pokemon = null
-
-    this.pokemonService.getPokemon(term).subscribe({
-      next: (data) => {
-        this.pokemon = data
-        this.loading = false
-        this.changeDetectorRef.detectChanges()
-      },
-      error: () => {
-        this.error = `No se encontró ningún Pokémon con "${term}".`
-        this.loading = false
-        this.changeDetectorRef.detectChanges()
-      },
-    })
-  }
+export class AppComponent {
+  titulo = 'Bienvenidos al Buscador Pokemon 3227025';
 }
