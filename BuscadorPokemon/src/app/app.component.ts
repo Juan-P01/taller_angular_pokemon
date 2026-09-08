@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core"
+import { ChangeDetectorRef, Component, OnInit } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { FormsModule } from "@angular/forms"
 import { PokemonService, type Pokemon } from "./pokemon.service"
@@ -16,7 +16,10 @@ export class AppComponent implements OnInit {
   loading = false
   error = ""
 
-  constructor(private pokemonService: PokemonService) {}
+  constructor(
+    private pokemonService: PokemonService,
+    private changeDetectorRef: ChangeDetectorRef,
+  ) {}
 
   ngOnInit(): void {
     this.buscar()
@@ -43,10 +46,12 @@ export class AppComponent implements OnInit {
       next: (data) => {
         this.pokemon = data
         this.loading = false
+        this.changeDetectorRef.detectChanges()
       },
       error: () => {
         this.error = `No se encontró ningún Pokémon con "${term}".`
         this.loading = false
+        this.changeDetectorRef.detectChanges()
       },
     })
   }
