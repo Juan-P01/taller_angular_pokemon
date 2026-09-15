@@ -1,16 +1,18 @@
-<header>
-  <h1>{{titulo}}</h1>
+<main class="page">
+  <section class="card">
+    <header class="card__header">
+      <span class="badge">Pokémon</span>
+      <h1 class="title">6 Pokémon</h1>
+      <p class="subtitle">Haz clic sobre cada nombre para mostrarlo.</p>
+    </header>
 
-  <nav>
-    <a routerLink="/registro" routerLinkActive="active-tab">
-      Registro Usuario
-    </a>
-    <a routerLink="/buscador" routerLinkActive="active-tab">
-      Buscador Pokemon
-    </a>
-  </nav>
-</header>
-
-<main>
-  <router-outlet></router-outlet>
+    <div class="pokemon-list">
+      <app-pikachu></app-pikachu>
+      <app-charmander></app-charmander>
+      <app-bulbasaur></app-bulbasaur>
+      <app-squirtle></app-squirtle>
+      <app-gengar></app-gengar>
+      <app-giratina></app-giratina>
+    </div>
+  </section>
 </main>
